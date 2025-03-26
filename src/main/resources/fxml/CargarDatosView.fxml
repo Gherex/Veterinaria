@@ -1,0 +1,9 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.CargarDatosController" spacing="20" alignment="CENTER">
+    <Label text="Formulario para cargar datos" style="-fx-font-size: 20px;"/>
+    <!-- Aquí irían campos de texto, combobox, etc. -->
+    <Button text="Guardar" onAction="#guardarDatos"/>
+</VBox>

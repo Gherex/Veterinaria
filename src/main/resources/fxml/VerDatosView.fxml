@@ -1,0 +1,13 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="gui.controllers.VerDatosController" spacing="20">
+    <TableView fx:id="tablaMascotas">
+        <columns>
+            <TableColumn text="Nombre"/>
+            <TableColumn text="Especie"/>
+        </columns>
+    </TableView>
+</VBox>

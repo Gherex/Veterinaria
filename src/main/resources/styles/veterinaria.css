@@ -1,0 +1,21 @@
+/* src/main/resources/styles.css */
+.root {
+    -fx-background-color: #f5f5f5;
+}
+
+.boton-menu {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-min-width: 150px;
+    -fx-min-height: 40px;
+}
+
+.boton-menu:hover {
+    -fx-background-color: #45a049;
+}
+
+.boton-salir {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+}
