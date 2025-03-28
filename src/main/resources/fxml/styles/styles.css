@@ -1,0 +1,198 @@
+/* Estilos generales */
+.root {
+    -fx-background-color: #dbdbdb;
+}
+
+/* Contenedor superior con margen */
+.top-margin-container {
+    -fx-padding: 40px 0 20px 0; /* Arriba, derecha, abajo, izquierda */
+}
+
+/* Banner centrado */
+.banner-container {
+    -fx-alignment: CENTER;
+    -fx-spacing: 20px;
+}
+
+/* Contenedor principal */
+.main-content-container {
+    -fx-spacing: 0;
+    -fx-padding: 0 20px 40px 20px;
+}
+
+/* Contenedor de botones */
+.button-container {
+    -fx-alignment: CENTER;
+    -fx-spacing: 30px;
+    -fx-padding: 0 40px;
+}
+
+/* Contenedor de imagen */
+.image-container {
+    -fx-alignment: CENTER;
+    -fx-padding: 20px;
+}
+
+/* Estilos para imágenes */
+.logo {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+.texto {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 0);
+}
+
+.animal-image {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 20, 0, 0, 0);
+}
+
+/* Botones */
+.boton-menu, .boton-salir {
+    -fx-min-width: 250px;
+    -fx-pref-width: 300px;
+    -fx-max-width: Infinity;
+    -fx-min-height: 60px;
+    -fx-pref-height: 70px;
+    -fx-max-height: 80px;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-padding: 15px 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+    -fx-cursor: hand;
+}
+
+.boton-menu {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+.boton-menu:hover {
+    -fx-background-color: #45a049;
+}
+
+.boton-salir {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+}
+
+.boton-salir:hover {
+    -fx-background-color: #d32f2f;
+}
+
+/*----------------------------------------------*/
+
+/* Estilo para el título */
+.titulo-container {
+    -fx-padding: 20px 0 30px 0;
+    -fx-background-color: linear-gradient(to bottom, #2c3e50, #3498db);
+}
+
+.titulo-formulario {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 2);
+}
+
+/* Contenedor principal */
+.form-container {
+    -fx-spacing: 20px;
+    -fx-padding: 0 20px;
+}
+
+/* Columna del formulario */
+.form-column {
+    -fx-spacing: 15px;
+    -fx-padding: 20px;
+}
+
+/* Grid del formulario */
+.form-grid {
+    -fx-vgap: 15px;
+    -fx-hgap: 10px;
+    -fx-padding: 0 0 20px 0;
+}
+
+/* Estilos para campos */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.text-field, .combo-box {
+    -fx-pref-height: 35px;
+    -fx-font-size: 14px;
+}
+
+/* Área de observaciones */
+.observaciones-label {
+    -fx-font-size: 16px;
+    -fx-padding: 5px 0;
+}
+
+.observaciones-textarea {
+    -fx-pref-height: 120px;
+    -fx-font-size: 14px;
+}
+
+/* Columna de imagen */
+.image-column {
+    -fx-alignment: center;
+    -fx-padding: 20px;
+}
+
+/* Contenedor de botones */
+.button-container {
+    -fx-spacing: 40px;
+    -fx-padding: 20px;
+}
+
+/* Botones del formulario */
+.boton-formulario {
+    -fx-min-width: 120px;
+    -fx-pref-height: 40px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+.boton-formulario:hover {
+    -fx-cursor: hand;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}
+
+.form-button {
+    -fx-min-width: 250px;
+        -fx-pref-width: 300px;
+        -fx-max-width: Infinity;
+        -fx-min-height: 60px;
+        -fx-pref-height: 70px;
+        -fx-max-height: 80px;
+        -fx-font-size: 22px;
+        -fx-font-weight: bold;
+        -fx-background-radius: 10px;
+        -fx-padding: 10px 0;
+        -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+        -fx-cursor: hand;
+        -fx-text-fill: white;
+}
+
+#guardarButton {
+    -fx-background-color: #3978c4;
+}
+
+#guardarButton:hover {
+    -fx-background-color: #285489;
+}
+
+#limpiarButton {
+    -fx-background-color: #b90000;
+}
+
+#limpiarButton:hover {
+    -fx-background-color: #730a0a;
+}

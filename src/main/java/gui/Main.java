@@ -1,5 +1,6 @@
 package gui;
 
+import gui.controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,16 +10,23 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/VeterinariaView.fxml"));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
-        primaryStage.setTitle("Sistema Veterinario");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
+    public void start(Stage primaryStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/VeterinariaView.fxml"));
+            Parent root = loader.load();
 
-    public static void main(String[] args) {
-        launch(args);
+            // Obtiene el controlador y pasa el Stage
+            MainController controller = loader.getController();
+            controller.setPrimaryStage(primaryStage);
+
+            Scene scene = new Scene(root, 1100, 700);
+            primaryStage.setTitle("Veterinaria");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
     }
 }
