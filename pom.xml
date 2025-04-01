@@ -26,6 +26,25 @@
             <artifactId>javafx-fxml</artifactId>
             <version>21</version>
         </dependency>
+        <!-- API de JPA -->
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <!-- Implementación de JPA: Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.2.0.Final</version>
+        </dependency>
+
+        <!-- Conector JDBC de MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
     </dependencies>
 
 </project>

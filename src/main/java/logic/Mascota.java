@@ -1,7 +1,12 @@
 package logic;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Mascota {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int num_cliente;
     private String nombre;
     private String raza;
@@ -9,6 +14,7 @@ public class Mascota {
     private String alergico;
     private String atencion_especial;
     private String observaciones;
+    @OneToOne
     private Dueno unDueno;
 
     public Mascota() {
