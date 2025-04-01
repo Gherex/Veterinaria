@@ -3,11 +3,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.geometry.Pos?>
-
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 <?import javafx.scene.image.Image?>
+
 <BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
             stylesheets="@styles/styles.css" fx:controller="gui.controllers.CargarDatosController">
 
@@ -26,54 +25,73 @@
 
     <!-- Zona central con dos columnas -->
     <center>
-        <HBox spacing="30" alignment="CENTER">
-            <children>
+        <HBox spacing="30" alignment="CENTER"><!-- Columna izquierda: formulario -->
+            <VBox spacing="15" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets top="20" left="30" right="30" bottom="20"/>
+                </padding>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Nombre:" minWidth="120"/>
+                    <TextField fx:id="nombreField" HBox.hgrow="ALWAYS"/>
+                </HBox>
 
-                <!-- Columna izquierda: formulario -->
-                <VBox spacing="15" alignment="TOP_LEFT">
-                    <padding>
-                        <Insets top="20" left="30" right="30" bottom="20"/>
-                    </padding>
-                    <children>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Raza:" minWidth="120"/>
+                    <TextField fx:id="razaField" HBox.hgrow="ALWAYS"/>
+                </HBox>
 
-                        <Label text="Nombre:"/>
-                        <TextField fx:id="nombreField"/>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Color:" minWidth="120"/>
+                    <TextField fx:id="colorField" HBox.hgrow="ALWAYS"/>
+                </HBox>
 
-                        <Label text="Raza:"/>
-                        <TextField fx:id="razaField"/>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Alérgico:" minWidth="120"/>
+                    <ComboBox fx:id="alergicoCombo">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Sí"/>
+                                <String fx:value="No"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
 
-                        <Label text="Color:"/>
-                        <TextField fx:id="colorField"/>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Atención especial:" minWidth="120"/>
+                    <ComboBox fx:id="atencionEspecialCombo">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Sí"/>
+                                <String fx:value="No"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
 
-                        <Label text="Alérgico:"/>
-                        <ComboBox fx:id="alergicoCombo">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Sí"/>
-                                    <String fx:value="No"/>
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Nombre dueño:" minWidth="120"/>
+                    <TextField fx:id="duenoField" HBox.hgrow="ALWAYS"/>
+                </HBox>
 
-                        <Label text="Atención especial:"/>
-                        <ComboBox fx:id="atencionEspecialCombo">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Sí"/>
-                                    <String fx:value="No"/>
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </children>
-                </VBox>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Cel Dueño:" minWidth="120"/>
+                    <TextField fx:id="celDuenoField" HBox.hgrow="ALWAYS"/>
+                </HBox>
 
-                <!-- Columna derecha: imagen -->
-                <StackPane styleClass="image-container" HBox.hgrow="ALWAYS">
-                    <ImageView styleClass="animal-image" preserveRatio="true">
-                        <Image url="@images/animals.png"/>
-                    </ImageView>
-                </StackPane>
-            </children>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Observaciones:" minWidth="120"/>
+                    <TextArea fx:id="observacionesArea" prefRowCount="4"/>
+                </HBox>
+
+            </VBox>
+
+            <!-- Columna derecha: imagen -->
+            <StackPane styleClass="image-container" HBox.hgrow="ALWAYS">
+                <ImageView styleClass="animal-image" preserveRatio="true">
+                    <Image url="@images/animals.png"/>
+                </ImageView>
+            </StackPane>
         </HBox>
     </center>
     <bottom>
