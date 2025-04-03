@@ -196,3 +196,15 @@
 #limpiarButton:hover {
     -fx-background-color: #730a0a;
 }
+
+.table-button {
+    -fx-pref-width: 70px;
+    -fx-pref-height: 70px;
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+    -fx-cursor: hand;
+    -fx-text-fill: black;
+}

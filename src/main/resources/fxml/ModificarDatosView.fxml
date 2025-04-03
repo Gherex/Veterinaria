@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@styles/styles.css" fx:controller="gui.controllers.ModificarDatosController">
+    <top>
+        <Label text="Modificación de datos" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="20" bottom="20"/>
+            </BorderPane.margin>
+            <style>
+                -fx-font-size: 24px;
+                -fx-font-weight: bold;
+            </style>
+        </Label>
+    </top>
+    <center>
+        <HBox spacing="30" alignment="CENTER">
+            <VBox spacing="15" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets top="20" left="30" right="30" bottom="20"/>
+                </padding>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Nombre:" minWidth="120"/>
+                    <TextField fx:id="nombreField" HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Raza:" minWidth="120"/>
+                    <TextField fx:id="razaField" HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Color:" minWidth="120"/>
+                    <TextField fx:id="colorField" HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Alérgico:" minWidth="120"/>
+                    <ComboBox fx:id="alergicoCombo">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Sí"/>
+                                <String fx:value="No"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Atención especial:" minWidth="120"/>
+                    <ComboBox fx:id="atencionEspecialCombo">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Sí"/>
+                                <String fx:value="No"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Nombre dueño:" minWidth="120"/>
+                    <TextField fx:id="duenoField" HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Cel Dueño:" minWidth="120"/>
+                    <TextField fx:id="celDuenoField" HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Observaciones:" minWidth="120"/>
+                    <TextArea fx:id="observacionesArea" prefRowCount="4"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox alignment="center" styleClass="button-container">
+            <Button text="Modificar" styleClass="form-button" fx:id="modificarButton" prefWidth="150"
+                    onAction="#modificarDatos"/>
+            <Button text="Limpiar" styleClass="form-button" fx:id="limpiarButton" prefWidth="150"
+                    onAction="#limpiarDatos"/>
+        </HBox>
+    </bottom>
+</BorderPane>

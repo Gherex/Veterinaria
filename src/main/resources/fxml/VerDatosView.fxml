@@ -1,13 +1,57 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
 
-<VBox xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
-      stylesheets="@styles/styles.css" fx:controller="gui.controllers.VerDatosController">
-    <TableView fx:id="tablaMascotas">
-        <columns>
-            <TableColumn text="Nombre"/>
-            <TableColumn text="Especie"/>
-        </columns>
-    </TableView>
-</VBox>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@styles/styles.css" fx:controller="gui.controllers.VerDatosController"
+            minWidth="1000" minHeight="600">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    <!-- Título superior -->
+    <top>
+        <Label text="Visualización de datos" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="20" bottom="20"/>
+            </BorderPane.margin>
+            <style>
+                -fx-font-size: 32px;
+                -fx-font-weight: bold;
+            </style>
+        </Label>
+    </top>
+    <center>
+        <HBox alignment="CENTER">
+            <VBox spacing="10">
+                <Label text="Datos de mascotas:" BorderPane.alignment="TOP_LEFT">
+                    <style>
+                        -fx-font-size: 20px;
+                    </style>
+                </Label>
+                <HBox spacing="20">
+                    <TableView fx:id="tablaMascotas">
+                        <columns>
+                            <TableColumn fx:id="numClienteColumn" text="Num_cliente"/>
+                            <TableColumn fx:id="nombreColumn" text="Nombre"/>
+                            <TableColumn fx:id="colorColumn" text="Color"/>
+                            <TableColumn fx:id="razaColumn" text="Raza"/>
+                            <TableColumn fx:id="alergicoColumn" text="Alérgico"/>
+                            <TableColumn fx:id="atencionEspecialColumn" text="At. Especial"/>
+                            <TableColumn fx:id="duenoColumn" text="Dueño"/>
+                            <TableColumn fx:id="celDuenoColumn" text="Cel"/>
+                        </columns>
+                    </TableView>
+                    <VBox alignment="CENTER" spacing="10">
+                        <Button text="❌" styleClass="table-button" fx:id="eliminarButton" onAction="#eliminarFila"/>
+                        <Button text="📝" styleClass="table-button" fx:id="modificarButton" onAction="#modificarFila"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

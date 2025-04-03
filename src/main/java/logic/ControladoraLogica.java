@@ -1,6 +1,7 @@
 package logic;
 
 import persistence.ControladoraPersistencia;
+import java.util.List;
 
 public class ControladoraLogica {
 
@@ -23,6 +24,17 @@ public class ControladoraLogica {
         mascota.setUnDueno(dueno);
 
         controlPersistence.guardar(dueno, mascota);
+    }
 
+    public List<Mascota> listarMascotas() {
+        return controlPersistence.listarMascotas();
+    }
+
+    public void borrarMascota(int numCliente) {
+        controlPersistence.eliminarMascota(numCliente);
+    }
+
+    public void modificarMascota(Mascota mascota) {
+        controlPersistence.modificarMascota(mascota);
     }
 }
