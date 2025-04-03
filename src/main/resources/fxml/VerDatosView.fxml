@@ -3,7 +3,7 @@
 <?import javafx.scene.control.TableColumn?>
 
 <VBox xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
-      stylesheets="@styles/styles.css" fx:controller="gui.controllers.MainController">
+      stylesheets="@styles/styles.css" fx:controller="gui.controllers.VerDatosController">
     <TableView fx:id="tablaMascotas">
         <columns>
             <TableColumn text="Nombre"/>

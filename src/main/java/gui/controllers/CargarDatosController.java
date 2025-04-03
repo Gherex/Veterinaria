@@ -3,8 +3,11 @@ package gui.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.TextFormatter;
+import logic.ControladoraLogica;
 
 public class CargarDatosController {
+
+    private final ControladoraLogica logicControl = new ControladoraLogica();
 
     @FXML
     private TextField nombreField;
@@ -94,6 +97,28 @@ public class CargarDatosController {
 
     @FXML
     public void guardarDatos() {
+
+        String nombre = nombreField.getText();
+        String raza = razaField.getText();
+        String color = colorField.getText();
+        String observaciones = observacionesArea.getText();
+        String alergico = alergicoCombo.getValue();
+        String atenEspecial = atencionEspecialCombo.getValue();
+
+        String dueno = duenoField.getText();
+        String celDueno = celDuenoField.getText();
+
+        logicControl.guardar(nombre, raza, color, observaciones, alergico, atenEspecial, dueno, celDueno);
+
+        // Mostrar mensaje Guardado
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Guardado exitoso");
+        alert.setHeaderText(null);
+        alert.setContentText("Se guardó correctamente.");
+        alert.showAndWait();
+
+        // Vaciar nuevamente el form
+        limpiarDatos();
     }
 
 }
