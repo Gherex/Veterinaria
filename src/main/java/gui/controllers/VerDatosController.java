@@ -112,12 +112,12 @@ public class VerDatosController {
             newStage.setMinWidth(800);
             newStage.setMinHeight(600);
 
-            // Obtener el controlador de la nueva ventana
-            ModificarDatosController modificarController = loader.getController();
+            // Obtener el controlador de la ventana Modificar Datos
+            ModificarDatosController modificarDatosC = loader.getController();
             // Obtener la fila seleccionada
             Mascota mascotaSeleccionada = tablaMascotas.getSelectionModel().getSelectedItem();
-            modificarController.setMascota(mascotaSeleccionada);
-            System.out.println(mascotaSeleccionada);
+            // Setear el atributo mascota del controlador Modificar Datos
+            modificarDatosC.setMascota(mascotaSeleccionada);
 
             // Cuando se cierre la ventana, recarga los datos
             newStage.setOnHidden(event -> cargarDatos());

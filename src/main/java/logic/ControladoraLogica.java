@@ -34,7 +34,30 @@ public class ControladoraLogica {
         controlPersistence.eliminarMascota(numCliente);
     }
 
-    public void modificarMascota(Mascota mascota) {
+    public void modificarMascota(Mascota mascota, String nombreMasco, String raza, String color,
+                                 String observaciones, String alergico, String atenEsp, String nombreDueno, String celDueno) {
+
+        mascota.setNombre(nombreMasco);
+        mascota.setRaza(raza);
+        mascota.setColor(color);
+        mascota.setObservaciones(observaciones);
+        mascota.setAlergico(alergico);
+        mascota.setAtencion_especial(atenEsp);
+
         controlPersistence.modificarMascota(mascota);
+
+        Dueno dueno = this.buscarDueno(mascota.getUnDueno().getId_dueno());
+        dueno.setNombre(nombreDueno);
+        dueno.setCelDueno(celDueno);
+
+        this.modificarDueno(dueno);
+    }
+
+    private void modificarDueno(Dueno dueno) {
+        controlPersistence.modificarDueno(dueno);
+    }
+
+    private Dueno buscarDueno(int idDueno) {
+        return controlPersistence.traerDueno(idDueno);
     }
 }

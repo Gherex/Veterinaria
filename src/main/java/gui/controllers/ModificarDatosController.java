@@ -5,7 +5,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.TextFormatter;
 import javafx.stage.Stage;
 import logic.ControladoraLogica;
-import logic.Dueno;
 import logic.Mascota;
 
 public class ModificarDatosController {
@@ -52,11 +51,9 @@ public class ModificarDatosController {
         colorField.textProperty().addListener((obs, oldValue, newValue) -> actualizarEstadoBotones());
         duenoField.textProperty().addListener((obs, oldValue, newValue) -> actualizarEstadoBotones());
         celDuenoField.textProperty().addListener((obs, oldValue, newValue) -> actualizarEstadoBotones());
-
         // Listener para ComboBox
         alergicoCombo.valueProperty().addListener((obs, oldValue, newValue) -> actualizarEstadoBotones());
         atencionEspecialCombo.valueProperty().addListener((obs, oldValue, newValue) -> actualizarEstadoBotones());
-
         // Listener para TextArea
         observacionesArea.textProperty().addListener((obs, oldValue, newValue) -> actualizarEstadoBotones());
     }
@@ -101,21 +98,22 @@ public class ModificarDatosController {
     @FXML
     public void modificarDatos() {
 
-        mascota.setNombre(nombreField.getText());
-        mascota.setRaza(razaField.getText());
-        mascota.setColor(colorField.getText());
-        mascota.setObservaciones(observacionesArea.getText());
-        mascota.setAlergico(alergicoCombo.getValue());
-        mascota.setAtencion_especial(atencionEspecialCombo.getValue());
-        Dueno dueno = new Dueno();
-        dueno.setNombre(duenoField.getText());
-        dueno.setCelDueno(celDuenoField.getText());
-        mascota.setUnDueno(dueno);
+        // TODOS LOS DATOS DE LAS MASCOTAS
+        String nombreMasco = nombreField.getText();
+        String raza = razaField.getText();
+        String color = colorField.getText();
+        String observaciones = observacionesArea.getText();
+        String alergico = alergicoCombo.getValue();
+        String atenEsp = atencionEspecialCombo.getValue();
 
-        int numCliente = mascota.getNum_cliente();
-        logicControl.modificarMascota(mascota);
+        // LOS DATOS DEL DUEÑO
+        String nombreDueno = duenoField.getText();
+        String celDueno = celDuenoField.getText();
 
-        // Mostrar mensaje Guardado
+        // Paso primero la mascota vieja y luego los valores nuevos modificados
+        logicControl.modificarMascota(mascota, nombreMasco, raza, color, observaciones, alergico, atenEsp, nombreDueno, celDueno);
+
+        // Mostrar mensaje modificado
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Modificado exitoso");
         alert.setHeaderText(null);
@@ -129,6 +127,7 @@ public class ModificarDatosController {
         stage.close();
     }
 
+    // Este seteo lo hago desde VerDatosController para iniciar la ventana ModificarDatos con valores en los inputs
     public void setMascota(Mascota mascota) {
         this.mascota = mascota;
         if (mascota != null) {

@@ -26,4 +26,12 @@ public class ControladoraPersistencia {
     public void modificarMascota(Mascota mascota) {
         mascotaJpaC.actualizarMascota(mascota);
     }
+
+    public Dueno traerDueno(int idDueno) {
+        return duenoJpaC.buscarDueno(idDueno);
+    }
+
+    public void modificarDueno(Dueno dueno) {
+        duenoJpaC.actualizarDueno(dueno);
+    }
 }

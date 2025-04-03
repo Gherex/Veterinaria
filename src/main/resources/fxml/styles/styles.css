@@ -181,19 +181,23 @@
         -fx-text-fill: white;
 }
 
-#guardarButton {
+#guardarButton,
+#modificarButton {
     -fx-background-color: #3978c4;
 }
 
-#guardarButton:hover {
+#guardarButton:hover,
+#modificarButton:hover {
     -fx-background-color: #285489;
 }
 
-#limpiarButton {
+#limpiarButton,
+#eliminarButton {
     -fx-background-color: #b90000;
 }
 
-#limpiarButton:hover {
+#limpiarButton:hover,
+#eliminarButton:hover {
     -fx-background-color: #730a0a;
 }
 
@@ -206,5 +210,4 @@
     -fx-padding: 10px 0;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
     -fx-cursor: hand;
-    -fx-text-fill: black;
 }
